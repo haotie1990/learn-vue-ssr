@@ -1086,6 +1086,11 @@ vue@^2.6.14:
   version "2.6.14"
   resolved "https://registry.nlark.com/vue/download/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
 
+vuex-router-sync@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/vuex-router-sync/download/vuex-router-sync-5.0.0.tgz#1a225c17a1dd9e2f74af0a1b2c62072e9492b305"
+  integrity sha1-GiJcF6Hdni90rwobLGIHLpSSswU=
+
 vuex@^3.6.2:
   version "3.6.2"
   resolved "https://registry.nlark.com/vuex/download/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"

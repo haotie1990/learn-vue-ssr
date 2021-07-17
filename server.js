@@ -10,16 +10,20 @@ const renderer = VueServerRenderer.createRenderer({
 });
 
 app.get('*', (req, res) => {
-  const context = { url: req.url };
+  const context = { url: req.url, reqeust: req, response: res };
   createVueApp(context)
     .then(vm => {
-      return renderer.renderToStream(vm);
+      return renderer.renderToStream(vm, context);
     })
     .then(html => {
       res.status(200).end(html);
     })
     .catch(err => {
-      res.status(500).end(err.message);
+      if (err.code === 404) {
+        res.status(404).end(err.message);
+      } else {
+        res.status(500).end(err.message);
+      }
     });
 });
 
