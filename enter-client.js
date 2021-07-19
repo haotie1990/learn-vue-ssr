@@ -6,7 +6,7 @@ const { app, router, store } = createVueApp();
 if (window.__INITIAL_STATE__) {
   // https://vuex.vuejs.org/zh/api/#replacestate
   // 客户端替换store的根状态，完成与服务的状态同步
-  state.replaceState(window.__INITIAL_STATE__);
+  store.replaceState(window.__INITIAL_STATE__);
 }
 
 Vue.mixin({

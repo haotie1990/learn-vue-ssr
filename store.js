@@ -16,7 +16,7 @@ Vue.use(Vuex);
 
 
 // 创建store实例的工厂方法，保证每一个请求都有不同的store实例
-export default function createVueStore() {
+export function createVueStore() {
   return new Vuex.Store({
     state: {
       today: ''
@@ -29,9 +29,10 @@ export default function createVueStore() {
     actions: {
       fetchToday({ commit }) {
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(new Date().toString());
-          }, 500);
+          // setTimeout(() => {
+          //   resolve(new Date().toString());
+          // }, 500);
+          resolve(new Date().toString());
         }).then(data => {
           commit('setToday', data);
         });

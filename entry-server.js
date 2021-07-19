@@ -18,12 +18,12 @@ export default context => {
         reject({ code: 404, message: 'page not found' });
         return;
       }
-
       // 对所有匹配到的路由组件调用asyncData方法
       Promise.all(matchedComponents.map(component => {
         if (component.asyncData) {
-          return component.asyncData({ router, store, ...context });
+          return component.asyncData({ router, store });
         }
+        return false;
       })).then(() => {
         // 在所有的预取钩子（pre fetch hook）resovle后
         // store已经完成了所需数据的填充
@@ -34,7 +34,7 @@ export default context => {
         context.state = store.state;
         // 注意返回Vue实例
         resolve(app);
-      });
+      }).catch(reject);
     }, reject);
   });
 }

@@ -20,6 +20,7 @@ export default {
    * 其上下文context，将包含：request、response、store、router
    */
   asyncData({ store }) {
+    console.log('asyncData fetchToday');
     return store.dispatch('fetchToday');
   },
   computed: {

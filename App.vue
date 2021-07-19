@@ -1,31 +1,38 @@
 <template>
-  <div class="body">
-    <header></header>
-    <content>
+  <div id="app" class="body">
+    <nav-header></nav-header>
+    <div class="content">
       <router-view></router-view>
-    </content>
-    <footer></footer>
+    </div>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Content from './components/Content.vue';
-import Footer from './components/Footer.vue';
+import NavHeader from './components/Header.vue';
+import CommonFooter from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Content,
-    Footer
+    NavHeader,
+    CommonFooter
   }
 }
 </script>
 
 <style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
 .body {
   min-height: 100vh;
+  background: #fff;
+}
+.body .content {
+  min-height: calc(100% - 50px);
+  padding: 16px;
   background: #fff;
 }
 </style>

@@ -7,12 +7,8 @@ Vue.use(Router);
 export function createVueRouter() {
   return new Router({
     mode: 'history',
+    fallback: false,
     routes: [
-      {
-        path: '/',
-        name: 'home',
-        component: () => import('./pages/main.vue')
-      },
       {
         path: '/monday',
         name: 'monday',
@@ -27,6 +23,11 @@ export function createVueRouter() {
         path: '/wednesday',
         name: 'wednesday',
         component: () => import('./pages/wednesday.vue')
+      },
+      {
+        path: '/',
+        name: 'home',
+        component: () => import('./pages/main.vue')
       }
     ]
   });

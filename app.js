@@ -17,10 +17,10 @@ export function createVueApp() {
   // store.state.route.query  // current query (对象类型)
   sync(store, router);
 
-  const { app } = new Vue({
+  const app = new Vue({
     router,
     store,
-    render: h => h(app)
+    render: h => h(App)
   });
   return { app, router, store };
 }
